@@ -62,7 +62,7 @@ class CalendarList extends Component {
       initialized: false
     };
     this.lastScrollPosition = -1000;
-    
+
     this.onViewableItemsChangedBound = this.onViewableItemsChanged.bind(this);
     this.renderCalendarBound = this.renderCalendar.bind(this);
   }
@@ -168,7 +168,7 @@ class CalendarList extends Component {
         ref={(c) => this.listView = c}
         //scrollEventThrottle={1000}
         style={[this.style.container, this.props.style]}
-        initialListSize={this.pastScrollRange * this.futureScrollRange + 1}
+        initialListSize={this.pastScrollRange + this.futureScrollRange + 1}
         data={this.state.rows}
         //snapToAlignment='start'
         //snapToInterval={calendarHeight}

@@ -8,9 +8,9 @@ export default function(theme={}) {
   return StyleSheet.create({
     header: {
       flexDirection: 'row',
-      justifyContent: 'space-between',
-      paddingLeft: 10,
-      paddingRight: 10,
+      justifyContent: appStyle.headerJustify,
+      paddingLeft: appStyle.headerPaddingLeft,
+      paddingRight: appStyle.headerPaddingRight,
       alignItems: 'center'
     },
     monthText: {

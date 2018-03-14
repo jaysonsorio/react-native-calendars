@@ -253,6 +253,7 @@ class Calendar extends Component {
           weekNumbers={this.props.showWeekNumbers}
           onPressArrowLeft={this.props.onPressArrowLeft}
           onPressArrowRight={this.props.onPressArrowRight}
+          onMonthPress={this.props.onMonthPress}
         />
         {weeks}
       </View>);

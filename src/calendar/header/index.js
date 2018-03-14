@@ -107,12 +107,14 @@ class CalendarHeader extends Component {
       <View>
         <View style={this.style.header}>
           {leftArrow}
-          <View style={{ flexDirection: 'row' }}>
-            <Text allowFontScaling={false} style={this.style.monthText}>
-              {this.props.month.toString(this.props.monthFormat ? this.props.monthFormat : 'MMMM yyyy')}
-            </Text>
-            {indicator}
-          </View>
+          <TouchableOpacity onPress={this.props.onMonthPress}>
+            <View style={{ flexDirection: 'row' }}>
+              <Text allowFontScaling={false} style={this.style.monthText}>
+                {this.props.month.toString(this.props.monthFormat ? this.props.monthFormat : 'MMMM yyyy')}
+              </Text>
+              {indicator}
+            </View>
+          </TouchableOpacity>
           {rightArrow}
         </View>
         {
