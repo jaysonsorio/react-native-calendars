@@ -176,7 +176,7 @@ class Day extends Component {
           backgroundColor: this.theme.calendarBackground
         };
         containerStyle.push({
-          backgroundColor: flags.endingDay.color
+          backgroundColor: flags.endingDay.color,
           borderWidth: 1,
           borderColor: '#606060',
         });
