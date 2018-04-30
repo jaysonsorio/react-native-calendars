@@ -126,7 +126,7 @@ class Day extends Component {
 
     if (this.props.marking) {
       containerStyle.push({
-        borderRadius: 7
+        borderRadius: 3
       });
 
       const flags = this.markingStyle;
@@ -177,6 +177,8 @@ class Day extends Component {
         };
         containerStyle.push({
           backgroundColor: flags.endingDay.color
+          borderWidth: 1,
+          borderColor: '#606060',
         });
       }
 
