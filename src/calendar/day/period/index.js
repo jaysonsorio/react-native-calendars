@@ -177,8 +177,6 @@ class Day extends Component {
         };
         containerStyle.push({
           backgroundColor: flags.endingDay.color,
-          borderWidth: 1,
-          borderColor: '#606060',
         });
       }
 
