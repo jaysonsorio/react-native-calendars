@@ -1,3 +1,4 @@
+//This is Jayson Sorio's react-native-calendar repo
 import React, {Component} from 'react';
 import {
   Text,
