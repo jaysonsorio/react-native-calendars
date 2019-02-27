@@ -42,6 +42,7 @@ class CalendarList extends Component {
     horizontal: PropTypes.bool,
     // Dynamic calendar height
     calendarHeight: PropTypes.number,
+    calendarStyle: PropTypes.shape,
   };
 
   constructor(props) {
@@ -51,6 +52,7 @@ class CalendarList extends Component {
     this.style = styleConstructor(props.theme);
     this.calendarWidth = this.props.calendarWidth || width;
     this.calendarHeight = props.calendarHeight;
+    this.calendarStyle = props.calendarStyle;
 
     const rows = [];
     const texts = [];
@@ -175,7 +177,7 @@ class CalendarList extends Component {
   }
 
   renderCalendar({item}) {
-    return (<CalendarListItem item={item} calendarHeight={this.calendarHeight} calendarWidth={this.props.horizontal ? this.calendarWidth : undefined  } {...this.props} />);
+    return (<CalendarListItem item={item} calendarHeight={this.calendarHeight} calendarWidth={this.props.horizontal ? this.calendarWidth : undefined  } calendarStyle={this.calendarStyle} {...this.props} />);
   }
 
   getItemLayout(data, index) {
