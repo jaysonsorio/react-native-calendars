@@ -254,7 +254,6 @@ class Calendar extends Component {
       }
     }
     return (
-      <TouchableWithoutFeedback>
         <View style={[this.style.container, this.props.style]}>
           <CalendarHeader
             theme={this.props.theme}
@@ -272,8 +271,7 @@ class Calendar extends Component {
             onMonthPress={this.props.onMonthPress}
           />
           <View style={this.style.monthView}>{weeks}</View>
-        </View>
-      </TouchableWithoutFeedback>);
+        </View>);
   }
 }
 
