@@ -42,7 +42,8 @@ class CalendarList extends Component {
     horizontal: PropTypes.bool,
     // Dynamic calendar height
     calendarHeight: PropTypes.number,
-    calendarStyle: PropTypes.shape,
+
+    calendarStyle: PropTypes.objectOf(PropTypes.string)
   };
 
   static defaultProps = {
@@ -54,15 +55,13 @@ class CalendarList extends Component {
     showScrollIndicator: false,
     scrollEnabled: true,
     scrollsToTop: false,
+    calendarStyle: {},
     removeClippedSubviews: Platform.OS === 'android' ? false : true,
   }
 
   constructor(props) {
     super(props);
     this.style = styleConstructor(props.theme);
-    this.calendarWidth = this.props.calendarWidth || width;
-    this.calendarHeight = props.calendarHeight;
-    this.calendarStyle = props.calendarStyle;
 
     const rows = [];
     const texts = [];
@@ -187,7 +186,7 @@ class CalendarList extends Component {
   }
 
   renderCalendar({item}) {
-    return (<CalendarListItem item={item} calendarHeight={this.calendarHeight} calendarWidth={this.props.horizontal ? this.calendarWidth : undefined  } calendarStyle={this.calendarStyle} {...this.props} />);
+    return (<CalendarListItem item={item} calendarHeight={this.props.calendarHeight} calendarWidth={this.props.horizontal ? this.props.calendarWidth : undefined  } calendarStyle={this.props.calendarStyle} {...this.props} />);
   }
 
   getItemLayout(data, index) {
@@ -210,7 +209,7 @@ class CalendarList extends Component {
         data={this.state.rows}
         //snapToAlignment='start'
         //snapToInterval={this.calendarHeight}
-        removeClippedSubviews={this.props.removeClippedSubviews !== undefined ? this.props.removeClippedSubviews: false}
+        removeClippedSubviews={this.props.removeClippedSubviews}
         pageSize={1}
         horizontal={this.props.horizontal}
         pagingEnabled={this.props.pagingEnabled}
