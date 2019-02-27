@@ -167,19 +167,16 @@ class Calendar extends Component {
     } else if (dateutils.sameDate(day, XDate())) {
       state = 'today';
     }
-    let dayComp;
+
     if (!dateutils.sameMonth(day, this.state.currentMonth) && this.props.hideExtraDays) {
-      if (['period', 'multi-period'].includes(this.props.markingType)) {
-        dayComp = (<View key={id} style={{flex: 1}}/>);
-      } else {
-        dayComp = (<View key={id} style={this.style.dayContainer}/>);
-      }
-    } else {
-      const DayComp = this.getDayComponent();
-      const date = day.getDate();
-      dayComp = (
+      return (<View key={id} style={{flex: 1}}/>);
+    }
+
+    const DayComp = this.getDayComponent();
+    const date = day.getDate();
+    return (
+      <View style={{flex: 1, alignItems: 'center'}} key={id}>
         <DayComp
-          key={id}
           state={state}
           theme={this.props.theme}
           onPress={this.pressDay}
@@ -189,9 +186,8 @@ class Calendar extends Component {
         >
           {date}
         </DayComp>
-      );
-    }
-    return dayComp;
+      </View>
+    );
   }
 
   getDayComponent() {

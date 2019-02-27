@@ -9,7 +9,6 @@ export default function styleConstructor(theme={}) {
   const appStyle = {...defaultStyle, ...theme};
   return StyleSheet.create({
     wrapper: {
-      flex: 1,
       alignItems: 'center',
       alignSelf: 'stretch',
       marginLeft: -1
@@ -42,6 +41,9 @@ export default function styleConstructor(theme={}) {
       fontWeight: '300',
       color: appStyle.dayTextColor || '#2d4150',
       backgroundColor: 'rgba(255, 255, 255, 0)'
+    },
+    today: {
+      backgroundColor: appStyle.todayBackgroundColor
     },
     todayText: {
       fontWeight: '500',
