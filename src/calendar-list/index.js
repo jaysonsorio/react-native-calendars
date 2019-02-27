@@ -43,7 +43,7 @@ class CalendarList extends Component {
     // Dynamic calendar height
     calendarHeight: PropTypes.number,
 
-    calendarStyle: PropTypes.objectOf(PropTypes.string)
+    calendarStyle: PropTypes.objectOf(PropTypes.number)
   };
 
   static defaultProps = {
